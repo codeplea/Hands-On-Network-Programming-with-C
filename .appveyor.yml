@@ -1,0 +1,48 @@
+
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      BNAME: "VS2015 x86"
+      MATRIX_EVAL: "\"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat\" x86"
+      CC: "cl.exe"
+      platform: x86
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      BNAME: "MinGW"
+      MATRIX_EVAL: "set PATH=C:\\MinGW\\msys\\1.0\\local\\bin;C:\\MinGW\\msys\\1.0\\mingw\\bin;C:\\MinGW\\msys\\1.0\\bin;C:\\MinGW\\bin"
+      CC: "gcc"
+      CEXTRA: "-liphlpapi -lws2_32"
+      platform: x86
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      BNAME: "Clang"
+      MATRIX_EVAL: "set PATH=C:\\Program Files\\LLVM\\bin"
+      CC: "clang"
+      CEXTRA: "-liphlpapi -lws2_32"
+      platform: x86
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      BNAME: "VS2015 x64"
+      MATRIX_EVAL: "\"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat\" x64"
+      CC: "cl.exe"
+      platform: x64
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      BNAME: "VS2017 x86"
+      MATRIX_EVAL: "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvars32.bat\""
+      CC: "cl.exe"
+      platform: x86
+
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      BNAME: "VS2017 x64"
+      MATRIX_EVAL: "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\""
+      CC: "cl.exe"
+      platform: x64
+
+
+before_build:
+  - echo "%MATRIX_EVAL%"
+  - "%MATRIX_EVAL%"
+
+build_script:
+  - ./test/build.bat
