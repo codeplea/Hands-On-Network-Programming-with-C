@@ -154,7 +154,7 @@ The code will look like the following:
 **Following is what you need for this book:**
 If you're a developer or a system administrator who wants to enter the world of network programming, this book is for you. Basic knowledge of C programming is assumed.
 
-With the following software list you can run all code files present in the book (Chapter 1-14).
+With the following softwares you can run all code files present in the book (Chapter 1-14).
 ### Required Software
 Following along with the code in this book requires that you to have access to a C compiler on a standard operating system. The example programs in this book were carefully tested on Windows, Linux, and macOS. They were tested using the gcc, clang, and Microsoft Visual Studio compilers. All of the code in this book will compile as either C or C++. You will need git installed in order to download the example code for each chapter. In addition, the code examples in Chapter 9, Loading Secure Web Pages with HTTPS and OpenSSL, and Chapter 10, Implementing a Secure Web Server, require that you have the OpenSSL library installed.
 
