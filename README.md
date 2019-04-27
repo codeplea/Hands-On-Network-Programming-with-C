@@ -140,35 +140,25 @@ All of the code is organized into folders. For example, Chapter02.
 
 The code will look like the following:
 ```
-#include <stdio.h>
+/*sock_init.c*/
+
+#if defined(_WIN32)
+#ifndef _WIN32_WINNT
+#define _WIN32_WINNT 0x0600
+#endif
 #include <winsock2.h>
+#include <ws2tcpip.h>
 #pragma comment(lib, "ws2_32.lib")
- 
-int main() {
-    WSADATA d;
- 
-    if (WSAStartup(MAKEWORD(2, 2), &d)) {
-        printf("Failed to initialize.\n");
-        return -1;
-    }
 ```
 
 **Following is what you need for this book:**
 If you're a developer or a system administrator who wants to enter the world of network programming, this book is for you. Basic knowledge of C programming is assumed.
 
 With the following software list you can run all code files present in the book (Chapter 1-14).
-### Software and Hardware List
-Following along with the code in this book requires that you to have access to a C compiler on a standard operating system. The example programs in this book were carefully tested on Windows, Linux, and macOS. They were tested using the gcc, clang, and Microsoft Visual Studio compilers. All of the code in this book will compile as either C or C++. 
+### Required Software
+Following along with the code in this book requires that you to have access to a C compiler on a standard operating system. The example programs in this book were carefully tested on Windows, Linux, and macOS. They were tested using the gcc, clang, and Microsoft Visual Studio compilers. All of the code in this book will compile as either C or C++. You will need git installed in order to download the example code for each chapter. In addition, the code examples in Chapter 9, Loading Secure Web Pages with HTTPS and OpenSSL, and Chapter 10, Implementing a Secure Web Server, require that you have the OpenSSL library installed.
 
-You will need git installed in order to download the example code for each chapter.
-
-In addition, the code examples in Chapter 9, Loading Secure Web Pages with HTTPS and OpenSSL, and Chapter 10, Implementing a Secure Web Server, require that you have the OpenSSL library installed.
-
-Chapter 11, Establishing SSH Connections with libssh, requires that the libssh library is installed.
-
-Instructions for installing all of the require software are provided in the the appendices. See Appendix B, Setting Up Your C Compiler On Windows, Appendix C, Setting Up Your C Compiler On Linux, and Appendix D, Setting Up Your C Compiler On macOS, for compiler setup
-
-A complete list of the example programs provided is given in Appendix E, Example Programs.
+Chapter 11, Establishing SSH Connections with libssh, requires that the libssh library is installed. Instructions for installing all of the require software are provided in the the appendices. See Appendix B, Setting Up Your C Compiler On Windows, Appendix C, Setting Up Your C Compiler On Linux, and Appendix D, Setting Up Your C Compiler On macOS, for compiler setup. A complete list of the example programs provided is given in Appendix E, Example Programs.
 
 No non-free software is required to follow along with any of the examples in this book.
 
