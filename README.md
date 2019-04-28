@@ -10,11 +10,15 @@ This is the code repository for [Hands-On Network Programming with C](https://ww
 Network programming, a challenging topic in C, is made easy to understand with a careful exposition of socket programming APIs. This book gets you started with modern network programming in C and proper usage of the relevant operating system APIs.
 
 This book covers the following exciting features:
-- Creating TCP and UDP connections over IP 
-- Resolve hostnames with DNS 
-- Interface with online APIs over HTTP or HTTPS 
-- Write safe and secure network code 
-- Write high-performance server code 
+-	Uncover cross-platform socket programming APIs
+-	Implement techniques   for supporting IPv4 and IPv6
+-	Understand how TCP and UDP connections work over IP
+-	Discover how hostname resolution and   DNS work
+-	Interface with web APIs using HTTP and HTTPS
+-	Acquire hands-on experience with the email protocol (SMTP)
+-	Gain real-world expertise with practical network applications  
+-	Explore new approaches for   the Internet of Things (IoT)
+
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789349869) today!
 
@@ -134,12 +138,6 @@ This chapter doesn't include any example programs.
 
 
 
-
-
-**Following is what you need for this book:**
-If you're a developer or a system administrator who wants to enter the world of network programming, this book is for you. Basic knowledge of C programming is assumed.
-
-With the following softwares you can run all code files present in the book (Chapter 1-14).
 
 ### Required Software
 
