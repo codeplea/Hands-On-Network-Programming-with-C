@@ -27,6 +27,27 @@ alt="https://www.packtpub.com/" border="5" /></a>
 
 ## Instructions and Navigations
 
+All of the code is organized into folders. For example, Chapter02.
+
+The code will look like the following:
+```
+/*sock_init.c*/
+
+#if defined(_WIN32)
+#ifndef _WIN32_WINNT
+#define _WIN32_WINNT 0x0600
+#endif
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#pragma comment(lib, "ws2_32.lib")
+
+```
+
+**Following is what you need for this book:**
+If you're a developer or a system administrator who wants to enter the world of network programming, this book is for you. Basic knowledge of C programming is assumed.
+
+With the following software and hardware list you can run all code files present in the book (Chapter 1-14).
+
 [![Build Status](https://travis-ci.org/codeplea/Hands-On-Network-Programming-with-C.svg?branch=master)](https://travis-ci.org/codeplea/Hands-On-Network-Programming-with-C)
 [![Build status](https://ci.appveyor.com/api/projects/status/yarb3kmmn5db21vn?svg=true)](https://ci.appveyor.com/project/codeplea/hands-on-network-programming-with-c)
 
