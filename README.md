@@ -46,7 +46,6 @@ The code will look like the following:
 **Following is what you need for this book:**
 If you're a developer or a system administrator who wants to enter the world of network programming, this book is for you. Basic knowledge of C programming is assumed.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-14).
 
 [![Build Status](https://travis-ci.org/codeplea/Hands-On-Network-Programming-with-C.svg?branch=master)](https://travis-ci.org/codeplea/Hands-On-Network-Programming-with-C)
 [![Build status](https://ci.appveyor.com/api/projects/status/yarb3kmmn5db21vn?svg=true)](https://ci.appveyor.com/project/codeplea/hands-on-network-programming-with-c)
@@ -158,7 +157,7 @@ This chapter doesn't include any example programs.
 This chapter doesn't include any example programs.
 
 
-
+With the following software you can run all code files present in the book (Chapter 1-14).
 
 ### Required Software
 
