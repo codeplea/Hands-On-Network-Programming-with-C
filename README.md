@@ -1,6 +1,6 @@
 # Hands-On Network Programming with C
 
-<a href="https://www.packtpub.com/networking-and-servers/hands-network-programming-c?utm_source=github&utm_medium=repository&utm_campaign=9781789349863 "><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B11212_MockupCover.png" alt="Hands-On Network Programming with C" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/networking-and-servers/hands-network-programming-c?utm_source=github&utm_medium=repository&utm_campaign=9781789349863 "><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781789349863_cover.png" alt="Hands-On Network Programming with C" height="256px" align="right"></a>
 
 This is the code repository for [Hands-On Network Programming with C](https://www.packtpub.com/networking-and-servers/hands-network-programming-c?utm_source=github&utm_medium=repository&utm_campaign=9781789349863 ), published by Packt.
 
