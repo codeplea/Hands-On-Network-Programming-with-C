@@ -138,7 +138,7 @@ void drop_client(struct client_info **client_list,
             free(client);
             return;
         }
-        p = &client->next;
+        p = &(*p)->next;
     }
 
     fprintf(stderr, "drop_client not found.\n");
@@ -311,7 +311,7 @@ int main() {
 
         struct client_info *client = client_list;
         while(client) {
-            struct client_info *next = client;
+            struct client_info *next = client->next;
 
             if (FD_ISSET(client->socket, &reads)) {
 
@@ -349,7 +349,7 @@ int main() {
                                 serve_resource(&client_list, client, path);
                             }
                         }
-                    }
+                    } //if (q)
                 }
             }
 
