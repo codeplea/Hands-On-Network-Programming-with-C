@@ -1,8 +1,8 @@
 # Hands-On Network Programming with C
 
-<a href="https://www.packtpub.com/networking-and-servers/hands-network-programming-c?utm_source=github&utm_medium=repository&utm_campaign=9781789349863 "><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781789349863_cover.png" alt="Hands-On Network Programming with C" height="256px" align="right"></a>
+<a href="https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20"><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781789349863_cover.png" alt="Hands-On Network Programming with C" height="256px" align="right"></a>
 
-This is the code repository for [Hands-On Network Programming with C](https://www.packtpub.com/networking-and-servers/hands-network-programming-c?utm_source=github&utm_medium=repository&utm_campaign=9781789349863 ), published by Packt.
+This is the code repository for [Hands-On Network Programming with C](https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20), written by Lewis Van Winkle and published by Packt.
 
 **Learn socket programming in C and write secure and optimized network code**
 
@@ -20,32 +20,9 @@ This book covers the following exciting features:
 -	Explore new approaches for   the Internet of Things (IoT)
 
 
-If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789349869) today!
-
-<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
-alt="https://www.packtpub.com/" border="5" /></a>
+If you feel this book is for you, get your [copy](https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20) today!
 
 ## Instructions and Navigations
-
-All of the code is organized into folders. For example, Chapter02.
-
-The code will look like the following:
-```
-/*sock_init.c*/
-
-#if defined(_WIN32)
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0600
-#endif
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#pragma comment(lib, "ws2_32.lib")
-
-```
-
-**Following is what you need for this book:**
-If you're a developer or a system administrator who wants to enter the world of network programming, this book is for you. Basic knowledge of C programming is assumed.
-
 
 [![Build Status](https://travis-ci.org/codeplea/Hands-On-Network-Programming-with-C.svg?branch=master)](https://travis-ci.org/codeplea/Hands-On-Network-Programming-with-C)
 [![Build status](https://ci.appveyor.com/api/projects/status/yarb3kmmn5db21vn?svg=true)](https://ci.appveyor.com/project/codeplea/hands-on-network-programming-with-c)
@@ -157,9 +134,7 @@ This chapter doesn't include any example programs.
 This chapter doesn't include any example programs.
 
 
-With the following software you can run all code files present in the book (Chapter 1-14).
-
-### Required Software
+## Required Software
 
 Following along with the code in this book requires that you to have access to a C compiler on a standard operating system. The example programs in this book were carefully tested on Windows, Linux, and macOS. They were tested using the gcc, clang, and Microsoft Visual Studio compilers. All of the code in this book will compile as either C or C++.
 
@@ -170,8 +145,6 @@ Chapter 11, Establishing SSH Connections with libssh, requires that the libssh l
 Instructions for installing all of the require software are provided in the the appendices. See Appendix B, Setting Up Your C Compiler On Windows, Appendix C, Setting Up Your C Compiler On Linux, and Appendix D, Setting Up Your C Compiler On macOS, for compiler setup. A complete list of the example programs provided is given in Appendix E, Example Programs.
 
 No non-free software is required to follow along with any of the examples in this book.
-
-We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](http://www.packtpub.com/sites/default/files/downloads/9781789349863_ColorImages.pdf).
 
 
 ## Get to Know the Author
