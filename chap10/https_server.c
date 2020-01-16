@@ -323,7 +323,7 @@ int main() {
 
 
             client->ssl = SSL_new(ctx);
-            if (!ctx) {
+            if (!client->ssl) {
                 fprintf(stderr, "SSL_new() failed.\n");
                 return 1;
             }
