@@ -317,6 +317,7 @@ int main() {
 
                 if (MAX_REQUEST_SIZE == client->received) {
                     send_400(&client_list, client);
+                    client = next;
                     continue;
                 }
 
