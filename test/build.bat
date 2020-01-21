@@ -75,6 +75,32 @@ del time_server.cpp
 cd ..
 
 
+cd chap02
+copy time_server_ipv6.c time_server_ipv6.cpp
+echo "%CC%"
+%CC% time_server_ipv6.c -o time_server_ipv6.exe %CEXTRA%
+REM time_server_ipv6.exe
+del time_server_ipv6.exe
+%CC% time_server_ipv6.cpp -o time_server_ipv6.exe %CEXTRA%
+REM time_server_ipv6.exe
+del time_server_ipv6.exe
+del time_server_ipv6.cpp
+cd ..
+
+
+cd chap02
+copy time_server_dual.c time_server_dual.cpp
+echo "%CC%"
+%CC% time_server_dual.c -o time_server_dual.exe %CEXTRA%
+REM time_server_dual.exe
+del time_server_dual.exe
+%CC% time_server_dual.cpp -o time_server_dual.exe %CEXTRA%
+REM time_server_dual.exe
+del time_server_dual.exe
+del time_server_dual.cpp
+cd ..
+
+
 cd chap03
 copy tcp_client.c tcp_client.cpp
 echo "%CC%"
