@@ -1,6 +1,6 @@
 # Hands-On Network Programming with C
 
-<a href="https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20"><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781789349863_cover.png" alt="Hands-On Network Programming with C" height="256px" align="right"></a>
+<a href="https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20"><img src="https://handsonnetworkprogramming.com/processed_images/d68715e4b29b3b9f00.png" alt="Hands-On Network Programming with C" height="256px" align="right"></a>
 
 This is the code repository for [Hands-On Network Programming with C](https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20), written by Lewis Van Winkle and published by Packt.
 
@@ -152,6 +152,6 @@ No non-free software is required to follow along with any of the examples in thi
 
 
 ### Suggestions and Feedback
-[Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
+Please [contact me](https://handsonnetworkprogramming.com/contact/) if you have any feedback or suggestions.
 
 
