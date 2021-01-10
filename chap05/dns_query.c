@@ -96,7 +96,7 @@ void print_dns_message(const char *message, int msg_length) {
     printf("RD = %d %s\n", rd, rd ? "recursion desired" : "");
 
     if (qr) {
-        const int rcode = msg[3] & 0x07;
+        const int rcode = msg[3] & 0x0F;
         printf("RCODE = %d ", rcode);
         switch(rcode) {
             case 0: printf("success\n"); break;
