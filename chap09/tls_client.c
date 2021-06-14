@@ -131,6 +131,18 @@ int main(int argc, char *argv[]) {
     X509_free(cert);
 
 
+    //Set to non-blocking. This is needed to for the SSL functions.
+    //Without this, SSL_read() might block.
+#if defined(_WIN32)
+    unsigned long nonblock = 1;
+    ioctlsocket(socket_peer, FIONBIO, &nonblock);
+#else
+    int flags;
+    flags = fcntl(socket_peer, F_GETFL, 0);
+    fcntl(socket_peer, F_SETFL, flags | O_NONBLOCK);
+#endif
+
+
 
     printf("Connected.\n");
     printf("To send data, enter text followed by enter.\n");
@@ -157,11 +169,18 @@ int main(int argc, char *argv[]) {
             char read[4096];
             int bytes_received = SSL_read(ssl, read, 4096);
             if (bytes_received < 1) {
-                printf("Connection closed by peer.\n");
-                break;
+                int err;
+                if ((err = SSL_get_error(ssl, bytes_received)) &&
+                        (err == SSL_ERROR_WANT_READ || err == SSL_ERROR_WANT_WRITE)) {
+                    //Just waiting on SSL, nothing to do.
+                } else {
+                    printf("Connection closed by peer.\n");
+                    break;
+                }
+            } else {
+                printf("Received (%d bytes): %.*s",
+                        bytes_received, bytes_received, read);
             }
-            printf("Received (%d bytes): %.*s",
-                    bytes_received, bytes_received, read);
         }
 
 #if defined(_WIN32)
