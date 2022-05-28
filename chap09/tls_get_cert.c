@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
 
 
     SSL *ssl = SSL_new(ctx);
-    if (!ctx) {
+    if (!ssl) {
         fprintf(stderr, "SSL_new() failed.\n");
         return 1;
     }
