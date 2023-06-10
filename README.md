@@ -142,7 +142,7 @@ In addition, the code examples in Chapter 9, Loading Secure Web Pages with HTTPS
 
 Chapter 11, Establishing SSH Connections with libssh, requires that the libssh library is installed.
 
-Instructions for installing all of the require software are provided in the the appendices. See Appendix B, Setting Up Your C Compiler On Windows, Appendix C, Setting Up Your C Compiler On Linux, and Appendix D, Setting Up Your C Compiler On macOS, for compiler setup. A complete list of the example programs provided is given in Appendix E, Example Programs.
+Instructions for installing all of the require software are provided in the appendices. See Appendix B, Setting Up Your C Compiler On Windows, Appendix C, Setting Up Your C Compiler On Linux, and Appendix D, Setting Up Your C Compiler On macOS, for compiler setup. A complete list of the example programs provided is given in Appendix E, Example Programs.
 
 No non-free software is required to follow along with any of the examples in this book.
 
