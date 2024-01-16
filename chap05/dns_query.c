@@ -234,7 +234,7 @@ int main(int argc, char *argv[]) {
         exit(0);
     }
 
-    if (strlen(argv[1]) > 255) {
+    if (strlen(argv[1]) > 253) {
         fprintf(stderr, "Hostname too long.");
         exit(1);
     }
