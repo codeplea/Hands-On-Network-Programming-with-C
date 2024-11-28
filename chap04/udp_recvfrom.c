@@ -68,7 +68,7 @@ int main() {
     socklen_t client_len = sizeof(client_address);
     char read[1024];
     int bytes_received = recvfrom(socket_listen,
-            read, 1024,
+            read, sizeof(read),
             0,
             (struct sockaddr*) &client_address, &client_len);
 

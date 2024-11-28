@@ -135,7 +135,7 @@ int main() {
 
         printf("Reading request...\n");
         char request[1024];
-        int bytes_received = SSL_read(ssl, request, 1024);
+        int bytes_received = SSL_read(ssl, request, sizeof(request));
         printf("Received %d bytes.\n", bytes_received);
         //printf("%.*s", bytes_received, request);
 
