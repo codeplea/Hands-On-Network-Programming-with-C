@@ -57,7 +57,11 @@ SOCKET create_socket(const char* host, const char *port) {
     hints.ai_flags = AI_PASSIVE;
 
     struct addrinfo *bind_address;
-    getaddrinfo(host, port, &hints, &bind_address);
+    int getaddrinfo_result = getaddrinfo(host, port, &hints, &bind_address);
+    if (getaddrinfo_result) {
+        fprintf(stderr, "getaddrinfo() failed. (%d, %d)\n", getaddrinfo_result, GETSOCKETERRNO());
+        exit(1);
+    }
 
     printf("Creating socket...\n");
     SOCKET socket_listen;
