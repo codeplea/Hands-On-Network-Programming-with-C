@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     int ret = ssh_connect(ssh);
     if (ret != SSH_OK) {
         fprintf(stderr, "ssh_connect() failed.\n%s\n", ssh_get_error(ssh));
-        return -1;
+        return 1;
     }
 
     printf("Connected to %s on port %d.\n", hostname, port);

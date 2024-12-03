@@ -34,8 +34,8 @@ int main() {
     struct ifaddrs *addresses;
 
     if (getifaddrs(&addresses) == -1) {
-        printf("getifaddrs call failed\n");
-        return -1;
+        fprintf(stderr, "getifaddrs call failed\n");
+        return 1;
     }
 
     struct ifaddrs *address = addresses;
