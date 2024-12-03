@@ -229,14 +229,14 @@ void print_dns_message(const char *message, int msg_length) {
 int main(int argc, char *argv[]) {
 
     if (argc < 3) {
-        printf("Usage:\n\tdns_query hostname type\n");
-        printf("Example:\n\tdns_query example.com aaaa\n");
-        exit(0);
+        fprintf(stderr, "Usage:\n\tdns_query hostname type\n");
+        fprintf(stderr, "Example:\n\tdns_query example.com aaaa\n");
+        return 1;
     }
 
     if (strlen(argv[1]) > 253) {
         fprintf(stderr, "Hostname too long.");
-        exit(1);
+        return 1;
     }
 
     unsigned char type;
@@ -253,7 +253,7 @@ int main(int argc, char *argv[]) {
     } else {
         fprintf(stderr, "Unknown type '%s'. Use a, aaaa, txt, mx, or any.",
                 argv[2]);
-        exit(1);
+        return 1;
     }
 
 #if defined(_WIN32)

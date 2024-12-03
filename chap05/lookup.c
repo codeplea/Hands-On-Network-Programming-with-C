@@ -31,9 +31,9 @@
 int main(int argc, char *argv[]) {
 
     if (argc < 2) {
-        printf("Usage:\n\tlookup hostname\n");
-        printf("Example:\n\tlookup example.com\n");
-        exit(0);
+        fprintf(stderr, "Usage:\n\tlookup hostname\n");
+        fprintf(stderr, "Example:\n\tlookup example.com\n");
+        return 1;
     }
 
 #if defined(_WIN32)
