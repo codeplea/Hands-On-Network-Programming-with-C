@@ -76,7 +76,7 @@ void parse_url(char *url, char **hostname, char **port, char** path) {
 }
 
 
-void send_request(SOCKET s, char *hostname, char *port, char *path) {
+void send_request(SOCKET s, const char *hostname, const char *port, const char *path) {
     char buffer[2048];
 
     sprintf(buffer, "GET /%s HTTP/1.1\r\n", path);
@@ -90,7 +90,7 @@ void send_request(SOCKET s, char *hostname, char *port, char *path) {
 }
 
 
-SOCKET connect_to_host(char *hostname, char *port) {
+SOCKET connect_to_host(const char *hostname, const char *port) {
     printf("Configuring remote address...\n");
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
