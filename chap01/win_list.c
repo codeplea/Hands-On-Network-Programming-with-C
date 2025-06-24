@@ -68,7 +68,7 @@ int main() {
             WSACleanup();
             return -1;
         }
-    } while (!adapters);
+    } while (1);
 
 
     PIP_ADAPTER_ADDRESSES adapter = adapters;
