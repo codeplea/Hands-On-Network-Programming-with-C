@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
 
         if (FD_ISSET(socket_peer, &reads)) {
             char read[4096];
-            int bytes_received = SSL_read(ssl, read, 4096);
+            int bytes_received = SSL_read(ssl, read, sizeof(read));
             if (bytes_received < 1) {
                 int err;
                 if ((err = SSL_get_error(ssl, bytes_received)) &&
@@ -189,7 +189,7 @@ int main(int argc, char *argv[]) {
         if(FD_ISSET(0, &reads)) {
 #endif
             char read[4096];
-            if (!fgets(read, 4096, stdin)) break;
+            if (!fgets(read, sizeof(read), stdin)) break;
             printf("Sending: %s", read);
             int bytes_sent = SSL_write(ssl, read, strlen(read));
             printf("Sent %d bytes.\n", bytes_sent);

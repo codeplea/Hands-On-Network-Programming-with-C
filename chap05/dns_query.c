@@ -321,7 +321,7 @@ int main(int argc, char *argv[]) {
 
     char read[1024];
     int bytes_received = recvfrom(socket_peer,
-            read, 1024, 0, 0, 0);
+            read, sizeof(read), 0, 0, 0);
 
     printf("Received %d bytes.\n", bytes_received);
 

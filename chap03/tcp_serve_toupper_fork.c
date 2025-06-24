@@ -94,7 +94,7 @@ int main() {
             CLOSESOCKET(socket_listen);
             while(1) {
                 char read[1024];
-                int bytes_received = recv(socket_client, read, 1024, 0);
+                int bytes_received = recv(socket_client, read, sizeof(read), 0);
                 if (bytes_received < 1) {
                     CLOSESOCKET(socket_client);
                     exit(0);
