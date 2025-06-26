@@ -46,13 +46,17 @@ int main() {
     }
 
 
-    if (!SSL_CTX_use_certificate_file(ctx, "cert.pem" , SSL_FILETYPE_PEM)
-    || !SSL_CTX_use_PrivateKey_file(ctx, "key.pem", SSL_FILETYPE_PEM)) {
+    if (!SSL_CTX_use_certificate_file(ctx, "cert.pem" , SSL_FILETYPE_PEM)) {
         fprintf(stderr, "SSL_CTX_use_certificate_file() failed.\n");
         ERR_print_errors_fp(stderr);
         return 1;
     }
 
+    if (!SSL_CTX_use_PrivateKey_file(ctx, "key.pem", SSL_FILETYPE_PEM)) {
+        fprintf(stderr, "SSL_CTX_use_PrivateKey_file() failed.\n");
+        ERR_print_errors_fp(stderr);
+        return 1;
+    }
 
 
     printf("Configuring local address...\n");
