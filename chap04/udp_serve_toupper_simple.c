@@ -44,7 +44,11 @@ int main() {
     hints.ai_flags = AI_PASSIVE;
 
     struct addrinfo *bind_address;
-    getaddrinfo(0, "8080", &hints, &bind_address);
+    int getaddrinfo_result = getaddrinfo(0, "8080", &hints, &bind_address);
+    if (getaddrinfo_result) {
+        fprintf(stderr, "getaddrinfo() failed. (%d, %d)\n", getaddrinfo_result, GETSOCKETERRNO());
+        return 1;
+    }
 
 
     printf("Creating socket...\n");
