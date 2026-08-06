@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        cc: [gcc, clang]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run examples
+        run: CC=${{ matrix.cc }} ./test/build.sh
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run examples
+        run: CC=clang ./test/build.sh
+
+  windows-msvc:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Build and run examples
+        shell: cmd
+        run: |
+          set CC=cl.exe
+          call test\build.bat
+
+  windows-mingw:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run examples
+        shell: cmd
+        run: |
+          set CC=gcc
+          set CEXTRA=-liphlpapi -lws2_32
+          call test\build.bat
