@@ -285,7 +285,7 @@ int main(int argc, char *argv[]) {
     }
 
 
-    char query[1024] = {0xAB, 0xCD, /* ID */
+    char query[1024] = {(char)0xAB, (char)0xCD, /* ID */
                         0x01, 0x00, /* Set recursion */
                         0x00, 0x01, /* QDCOUNT */
                         0x00, 0x00, /* ANCOUNT */
