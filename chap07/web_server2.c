@@ -251,7 +251,7 @@ void serve_resource(struct client_info **client_list,
     sprintf(buffer, "Connection: close\r\n");
     send(client->socket, buffer, strlen(buffer), 0);
 
-    sprintf(buffer, "Content-Length: %u\r\n", cl);
+    sprintf(buffer, "Content-Length: %lu\r\n", (unsigned long)cl);
     send(client->socket, buffer, strlen(buffer), 0);
 
     sprintf(buffer, "Content-Type: %s\r\n", ct);
