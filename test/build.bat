@@ -1,4 +1,4 @@
-copy test/id.c test/id.cpp
+copy test\id.c test\id.cpp
 echo "%CC%"
 %CC% test/id.c -o id.exe %CEXTRA%
 id.exe
@@ -6,7 +6,7 @@ del id.exe
 %CC% test/id.cpp -o id.exe %CEXTRA%
 id.exe
 del id.exe
-del test/id.cpp
+del test\id.cpp
 
 
 cd chap01
