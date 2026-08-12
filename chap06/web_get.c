@@ -26,7 +26,7 @@
 
 #define TIMEOUT 5.0
 
-void parse_url(char *url, char **hostname, char **port, char** path) {
+void parse_url(char *url, char **hostname, const char **port, char** path) {
     printf("URL: %s\n", url);
 
     char *p;
@@ -76,7 +76,7 @@ void parse_url(char *url, char **hostname, char **port, char** path) {
 }
 
 
-void send_request(SOCKET s, char *hostname, char *port, char *path) {
+void send_request(SOCKET s, const char *hostname, const char *port, const char *path) {
     char buffer[2048];
 
     sprintf(buffer, "GET /%s HTTP/1.1\r\n", path);
@@ -90,7 +90,7 @@ void send_request(SOCKET s, char *hostname, char *port, char *path) {
 }
 
 
-SOCKET connect_to_host(char *hostname, char *port) {
+SOCKET connect_to_host(const char *hostname, const char *port) {
     printf("Configuring remote address...\n");
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
@@ -151,7 +151,8 @@ int main(int argc, char *argv[]) {
     }
     char *url = argv[1];
 
-    char *hostname, *port, *path;
+    char *hostname, *path;
+    const char *port;
     parse_url(url, &hostname, &port, &path);
 
     SOCKET server = connect_to_host(hostname, port);
