@@ -1,5 +1,7 @@
 # Hands-On Network Programming with C
 
+[![CI](https://github.com/codeplea/Hands-On-Network-Programming-with-C/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/codeplea/Hands-On-Network-Programming-with-C/actions/workflows/ci.yml)
+
 <a href="https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20"><img src="https://handsonnetworkprogramming.com/processed_images/d68715e4b29b3b9f00.png" alt="Hands-On Network Programming with C" height="256px" align="right"></a>
 
 This is the code repository for [Hands-On Network Programming with C](https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20), written by Lewis Van Winkle and published by Packt.
@@ -23,8 +25,6 @@ This book covers the following exciting features:
 If you feel this book is for you, get your [copy](https://www.amazon.com/exec/obidos/ASIN/1789349869/aoeu-20) today!
 
 ## Instructions and Navigations
-
-[![CI](https://github.com/codeplea/Hands-On-Network-Programming-with-C/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/codeplea/Hands-On-Network-Programming-with-C/actions/workflows/ci.yml)
 
 This repo contains the code which accompanies the book "Hands-On Network
 Programming with C", written by Lewis Van Winkle. The code is released under
