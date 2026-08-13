@@ -167,7 +167,7 @@ int main(int argc, char *argv[])
             fname, fsize, fpermission);
     free(fname);
 
-    char *buffer = malloc(fsize);
+    char *buffer = (char*)malloc(fsize);
     if (!buffer) {
         fprintf(stderr, "malloc() failed.\n");
         return 1;
