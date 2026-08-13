@@ -23,6 +23,26 @@ jobs:
       - name: Build and run examples
         run: CC=clang ./test/build.sh
 
+  # The examples in chapters 9 to 11 need OpenSSL or libssh, so test/build.sh
+  # does not build them. Syntax checking them here needs only the headers, and
+  # catches the compile diagnostics that a build would.
+  library-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install OpenSSL and libssh headers
+        run: sudo apt-get update && sudo apt-get install -y libssl-dev libssh-dev
+      - name: Syntax check chapters 9 to 11 as C and C++
+        run: |
+          status=0
+          for f in chap09/*.c chap10/*.c chap11/*.c; do
+              gcc -Wall -Wextra -fsyntax-only "$f" || status=1
+              cp "$f" "${f%.c}.cpp"
+              g++ -Wall -Wextra -fsyntax-only "${f%.c}.cpp" || status=1
+              rm -f "${f%.c}.cpp"
+          done
+          exit $status
+
   windows-msvc:
     runs-on: windows-latest
     steps:
