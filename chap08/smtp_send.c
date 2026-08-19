@@ -117,8 +117,9 @@ SOCKET connect_to_host(const char *hostname, const char *port) {
     memset(&hints, 0, sizeof(hints));
     hints.ai_socktype = SOCK_STREAM;
     struct addrinfo *peer_address;
-    if (getaddrinfo(hostname, port, &hints, &peer_address)) {
-        fprintf(stderr, "getaddrinfo() failed. (%d)\n", GETSOCKETERRNO());
+    int getaddrinfo_result = getaddrinfo(hostname, port, &hints, &peer_address);
+    if (getaddrinfo_result) {
+        fprintf(stderr, "getaddrinfo() failed. (%d, %d)\n", getaddrinfo_result, GETSOCKETERRNO());
         exit(1);
     }
 
