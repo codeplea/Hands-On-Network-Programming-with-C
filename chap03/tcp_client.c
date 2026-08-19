@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
 
         if (FD_ISSET(socket_peer, &reads)) {
             char read[4096];
-            int bytes_received = recv(socket_peer, read, 4096, 0);
+            int bytes_received = recv(socket_peer, read, sizeof(read), 0);
             if (bytes_received < 1) {
                 printf("Connection closed by peer.\n");
                 break;
@@ -120,7 +120,7 @@ int main(int argc, char *argv[]) {
         if(FD_ISSET(0, &reads)) {
 #endif
             char read[4096];
-            if (!fgets(read, 4096, stdin)) break;
+            if (!fgets(read, sizeof(read), stdin)) break;
             printf("Sending: %s", read);
             int bytes_sent = send(socket_peer, read, strlen(read), 0);
             printf("Sent %d bytes.\n", bytes_sent);

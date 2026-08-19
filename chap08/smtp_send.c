@@ -209,7 +209,7 @@ int main() {
     timeinfo = gmtime(&timer);
 
     char date[128];
-    strftime(date, 128, "%a, %d %b %Y %H:%M:%S +0000", timeinfo);
+    strftime(date, sizeof(date), "%a, %d %b %Y %H:%M:%S +0000", timeinfo);
 
     send_format(server, "Date:%s\r\n", date);
 

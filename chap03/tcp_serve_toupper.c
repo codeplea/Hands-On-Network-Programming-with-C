@@ -117,7 +117,7 @@ int main() {
 
                 } else {
                     char read[1024];
-                    int bytes_received = recv(i, read, 1024, 0);
+                    int bytes_received = recv(i, read, sizeof(read), 0);
                     if (bytes_received < 1) {
                         FD_CLR(i, &master);
                         CLOSESOCKET(i);

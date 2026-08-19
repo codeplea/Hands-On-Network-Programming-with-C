@@ -93,7 +93,7 @@ int main() {
     int bytes_received;
     while(1) {
         char read[1024];
-        bytes_received = recv(socket_client, read, 1024, 0);
+        bytes_received = recv(socket_client, read, sizeof(read), 0);
         if (bytes_received < 1) {
             break;
         } else {

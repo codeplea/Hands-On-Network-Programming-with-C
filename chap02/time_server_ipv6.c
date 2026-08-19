@@ -130,7 +130,7 @@ int main() {
 
     printf("Reading request...\n");
     char request[1024];
-    int bytes_received = recv(socket_client, request, 1024, 0);
+    int bytes_received = recv(socket_client, request, sizeof(request), 0);
     printf("Received %d bytes.\n", bytes_received);
     //printf("%.*s", bytes_received, request);
 
