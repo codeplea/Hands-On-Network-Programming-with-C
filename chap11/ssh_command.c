@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     int ret = ssh_connect(ssh);
     if (ret != SSH_OK) {
         fprintf(stderr, "ssh_connect() failed.\n%s\n", ssh_get_error(ssh));
-        return -1;
+        return 1;
     }
 
     printf("Connected to %s on port %d.\n", hostname, port);
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     if (ssh_get_server_publickey(ssh, &key) != SSH_OK) {
         fprintf(stderr, "ssh_get_server_publickey() failed.\n%s\n",
                 ssh_get_error(ssh));
-        return -1;
+        return 1;
     }
 
     unsigned char *hash;
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
                 &hash, &hash_len) != SSH_OK) {
         fprintf(stderr, "ssh_get_publickey_hash() failed.\n%s\n",
                 ssh_get_error(ssh));
-        return -1;
+        return 1;
     }
 
     printf("Host public key hash:\n");

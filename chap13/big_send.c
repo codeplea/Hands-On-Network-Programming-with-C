@@ -117,7 +117,7 @@ int main(int argc, char *argv[]) {
             return 1;
         }
         if (r != send_size) {
-            printf("send() only consumed %d bytes.\n", r);
+            fprintf(stderr, "send() only consumed %d bytes.\n", r);
             return 1;
         }
 

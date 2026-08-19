@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
     struct addrinfo *peer_address;
     if (getaddrinfo(hostname, port, &hints, &peer_address)) {
         fprintf(stderr, "getaddrinfo() failed. (%d)\n", GETSOCKETERRNO());
-        exit(1);
+        return 1;
     }
 
     printf("Remote address is: ");
@@ -79,14 +79,14 @@ int main(int argc, char *argv[]) {
             peer_address->ai_socktype, peer_address->ai_protocol);
     if (!ISVALIDSOCKET(server)) {
         fprintf(stderr, "socket() failed. (%d)\n", GETSOCKETERRNO());
-        exit(1);
+        return 1;
     }
 
     printf("Connecting...\n");
     if (connect(server,
                 peer_address->ai_addr, peer_address->ai_addrlen)) {
         fprintf(stderr, "connect() failed. (%d)\n", GETSOCKETERRNO());
-        exit(1);
+        return 1;
     }
     freeaddrinfo(peer_address);
 
